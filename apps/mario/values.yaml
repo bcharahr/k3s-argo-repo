@@ -1,0 +1,27 @@
+replicaCount: 1
+
+image:
+  repository: pengbai/docker-supermario
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: true
+  className: traefik
+  host: mario.3aevolution.com
+  clusterIssuer: "" # Set to the name of your cert-manager ClusterIssuer, if used.
+  tls:
+    enabled: true
+    secretName: mario-tls
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
