@@ -23,7 +23,7 @@ spec:
       source:
         repoURL: https://github.com/bcharahr/k3s-argo-repo.git
         targetRevision: main
-        path: '{{.path}}'
+        path: '{{.path.path}}'
         helm:
           valueFiles:
             - values.yaml
