@@ -9,7 +9,7 @@ spec:
     - missingkey=error
   generators:
     - git:
-        repoURL: git@github.com:bcharahr/k3s-argo-repo.git
+        repoURL: https://github.com/bcharahr/k3s-argo-repo.git
         revision: main
         directories:
           - path: apps/*
@@ -21,7 +21,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: git@github.com:bcharahr/k3s-argo-repo.git
+        repoURL: https://github.com/bcharahr/k3s-argo-repo.git
         targetRevision: main
         path: '{{.path}}'
         helm:

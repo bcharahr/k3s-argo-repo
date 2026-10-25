@@ -13,7 +13,7 @@ ingress:
   enabled: true
   className: traefik
   host: mario.3aevolution.com
-  clusterIssuer: "" # Set to the name of your cert-manager ClusterIssuer, if used.
+  clusterIssuer: "letsencrypt-cloudflare" # Set to the name of your cert-manager ClusterIssuer, if used.
   tls:
     enabled: true
     secretName: mario-tls

@@ -20,7 +20,7 @@ apps/
 ## Bootstrap
 
 Install Argo CD in the cluster first, then ensure it can access this GitHub
-repository (the origin currently uses SSH). From a machine with `kubectl`
+repository over HTTPS. From a machine with `kubectl`
 configured for the cluster, apply `bootstrap/root-app.yaml`:
 
 ```sh
