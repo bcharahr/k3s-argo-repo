@@ -1,0 +1,7 @@
+# Values for the upstream hashicorp/vault-secrets-operator chart are nested under `vault-secrets-operator:`.
+vault-secrets-operator:
+  defaultVaultConnection:
+    enabled: true
+    # Short name on purpose: the full *.svc.cluster.local name gets hijacked by the
+    # 3aevolution.com search domain + wildcard DNS (ndots:5).
+    address: http://vault.vault.svc:8200
