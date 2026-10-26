@@ -1,0 +1,16 @@
+# Values for the upstream hashicorp/vault chart are nested under `vault:`.
+# These match the release previously installed by the k3s HelmChart addon.
+vault:
+  server:
+    image:
+      tag: 1.21.1
+
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+      hosts:
+        - host: vault-k3s.3aevolution.com
+          paths:
+            - /
