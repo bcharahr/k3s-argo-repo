@@ -25,6 +25,14 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
+          {{- if .Values.vault.enabled }}
+          env:
+            - name: MARIO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.vault.secretName }}
+                  key: password
+          {{- end }}
           readinessProbe:
             httpGet:
               path: /
