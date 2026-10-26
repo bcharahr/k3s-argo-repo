@@ -25,3 +25,12 @@ resources:
   limits:
     cpu: 250m
     memory: 256Mi
+
+# Secrets synced from Vault by the Vault Secrets Operator (VSO).
+vault:
+  enabled: true
+  role: mario                 # Vault role at auth/kubernetes/role/mario
+  mount: secret               # KV v2 mount
+  path: mario/config          # -> secret/mario/config in Vault
+  secretName: mario-config    # Kubernetes Secret VSO creates
+  refreshAfter: 60s
